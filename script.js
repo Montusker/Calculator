@@ -11,9 +11,7 @@ const multiply = function(num1, num2) {
 };
 
 const divide = function(num1, num2) {
-    if (num2 == 0) {
-        return "Error: Divide by 0"
-    }
+
     return num1 / num2;
 };
 
@@ -22,16 +20,19 @@ const operate = function(operator, num1, num2) {
     num2 = parseFloat(num2);
     switch (operator) {
         case "+":
-            return add(num1, num2);
+            return parseFloat(add(num1, num2).toFixed(2));
             break;
         case "-":
-            return subtract(num1, num2);
+            return parseFloat(subtract(num1, num2).toFixed(2));
             break;
         case "*":
-            return multiply(num1, num2);
+            return parseFloat(multiply(num1, num2).toFixed(2));
             break;
         case "/":
-            return divide(num1, num2);
+            if (num2 == 0) {
+                return "Error: Divide by 0"
+            }
+            return parseFloat(divide(num1, num2).toFixed(2));
             break;
         default:
             break;
@@ -71,14 +72,12 @@ buttons.forEach((button) => {
                     display.textContent = operator;
                     return;
                 } else {
-                    // number2 = displayValue;
-                    // number1 = operate(operator, number1, number2);
-                    // displayValue = number1;
-
-                    // operator = button.innerHTML;
-                    // display.textContent = operator;
-                    // operator = "";
-                    // return;
+                    number2 = displayValue;
+                    displayValue = 0;
+                    number1 = operate(operator, number1, number2);
+                    operator = button.innerHTML;
+                    display.textContent = operator;
+                    return;
                 }
 
                 break;

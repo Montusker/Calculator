@@ -32,3 +32,17 @@ const operate = function(operator, num1, num2) {
             break;
     }
 }
+
+let displayValue;
+
+const buttons = document.querySelectorAll('button');
+const display = document.querySelector('.display-text');
+
+
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        display.textContent = display.textContent + button.id;
+        displayValue = display.textContent;
+
+    });
+});

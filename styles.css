@@ -13,6 +13,10 @@
     margin: 10px;
 }
 
+.display-text {
+    padding: 10px;
+}
+
 .calcBtns {
     display: grid;
     grid-template-columns: repeat(4, 1fr);

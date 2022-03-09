@@ -1,3 +1,10 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .calculator {
     display: flex;
     flex-direction: column;
@@ -21,4 +28,20 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     height: 500px;
+}
+
+.numBtn {
+    background-color: lightblue;
+}
+
+.operator {
+    background-color: lightcoral;
+}
+
+.equals {
+    background-color: orange;
+}
+
+.clear {
+    background-color: greenyellow;
 }
